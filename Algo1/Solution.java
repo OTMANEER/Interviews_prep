@@ -1179,6 +1179,10 @@ public class Solution {
         System.out.println("otmane is the best here.");
     }
 
+    public void returnRien2(int a) {
+        System.out.println("otmane is the best here.");
+    }
+
     // these changes are made for verification only.
 
 }
