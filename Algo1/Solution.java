@@ -697,51 +697,53 @@ public class Solution {
         return 0;
     }
 
-/*    public int minSubArrayLen(int target, int[] nums) {
-        int ans = 0;
-        int sum = 0;
-        int k = 0;
-        int len = nums.length;
-        int i = 0;
-        for (i = 0; i < len; i++) {
-            sum += nums[i];
-            ans++;
-
-            if (sum >= target) {
-                k = i;
-                break;
-            }
-        }
-
-        if (sum < target && i == len)
-            return 0;
-
-        if (k == len && sum == target)
-            return ans;
-
-        int tempS = sum;
-        int tempK = k;
-        for (int j = k; j < len; j++) {
-            tempS -= nums[j - k];
-            if (tempS >= target) {
-                ans--;
-            } else {
-                tempS += nums[j];
-
-                if (tempS >= target)
-                    for (int t = k; t < j; t++) {
-                        tempS -= nums[t - k];
-                        if (tempS >= target)
-                            ans--;
-                        else
-                            tempS += nums[t - k];
-                    }
-            }
-
-        }
-
-        return ans;
-    }*/
+    /*
+     * public int minSubArrayLen(int target, int[] nums) {
+     * int ans = 0;
+     * int sum = 0;
+     * int k = 0;
+     * int len = nums.length;
+     * int i = 0;
+     * for (i = 0; i < len; i++) {
+     * sum += nums[i];
+     * ans++;
+     * 
+     * if (sum >= target) {
+     * k = i;
+     * break;
+     * }
+     * }
+     * 
+     * if (sum < target && i == len)
+     * return 0;
+     * 
+     * if (k == len && sum == target)
+     * return ans;
+     * 
+     * int tempS = sum;
+     * int tempK = k;
+     * for (int j = k; j < len; j++) {
+     * tempS -= nums[j - k];
+     * if (tempS >= target) {
+     * ans--;
+     * } else {
+     * tempS += nums[j];
+     * 
+     * if (tempS >= target)
+     * for (int t = k; t < j; t++) {
+     * tempS -= nums[t - k];
+     * if (tempS >= target)
+     * ans--;
+     * else
+     * tempS += nums[t - k];
+     * }
+     * }
+     * 
+     * }
+     * 
+     * return ans;
+     * }
+     */
 
     public static int OTMANE_TESTING() {
         return 0;
@@ -1005,61 +1007,58 @@ public class Solution {
             }
         }
         return res;
-        }
+    }
 
     public void twoSumII(int[] numbers, int i, List<List<Integer>> res) {
-        int l = i+1, r = numbers.length - 1;
+        int l = i + 1, r = numbers.length - 1;
         while (l < r) {
             int sum = numbers[i] + numbers[l] + numbers[r];
-            if (sum <0) {
+            if (sum < 0) {
                 ++l;
-            }
-            else if (sum > 0)
+            } else if (sum > 0)
                 --r;
             else {
-                res.add(Arrays.asList(numbers[i],numbers[l++],numbers[r--]));
-                while(l<r && numbers[l] == numbers [l-1])
+                res.add(Arrays.asList(numbers[i], numbers[l++], numbers[r--]));
+                while (l < r && numbers[l] == numbers[l - 1])
                     ++l;
             }
         }
     }
-// target = 7, nums = [2,3,1,2,4,3]
-
-
+    // target = 7, nums = [2,3,1,2,4,3]
 
     public static int minSubArrayLen(int target, int[] nums) {
-        int ans  = Integer.MAX_VALUE;
+        int ans = Integer.MAX_VALUE;
         int s = 0;
         // Using the accumlative sum of nums to remove a time exceeds.
 
         int sums[] = new int[nums.length];
         sums[0] = nums[0];
-        for(int i = 1;i<nums.length;i++)
-            sums[i] =sums[i-1] + nums[i];
+        for (int i = 1; i < nums.length; i++)
+            sums[i] = sums[i - 1] + nums[i];
 
-        //     sums = [ 2, 5, 6, 8, 12, 15]
-        for(int i = 0; i<nums.length;i++){
-           for(int j = i; j< nums.length;j++){
-               s = sums[j]-sums[i]+nums[i];
-                if ( s>= target) {
+        // sums = [ 2, 5, 6, 8, 12, 15]
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i; j < nums.length; j++) {
+                s = sums[j] - sums[i] + nums[i];
+                if (s >= target) {
                     ans = Integer.min(ans, (j - i + 1));
                     break;
                 }
-           }
+            }
         }
 
-        return (ans != Integer.MAX_VALUE )? ans : 0;
+        return (ans != Integer.MAX_VALUE) ? ans : 0;
     }
 
     // A good solution in O(n) using two pointers
-    public static int minSubArrayLenII(int target, int[] nums){
+    public static int minSubArrayLenII(int target, int[] nums) {
         int ans = Integer.MAX_VALUE;
-        int l = 0, sum=0;
+        int l = 0, sum = 0;
 
-        for(int i = 0; i< nums.length;i++){
-            sum+= nums[i];
-            while(sum>=target){
-                ans = Integer.min(ans,i-l+1); // i-1+l is the current size of the array
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            while (sum >= target) {
+                ans = Integer.min(ans, i - l + 1); // i-1+l is the current size of the array
                 sum -= nums[l++];
             }
         }
@@ -1067,31 +1066,30 @@ public class Solution {
         return (ans != Integer.MAX_VALUE) ? ans : 0;
     }
 
-
     /*
-    *
-    * =   [[1,1,0],
-        * [1,1,0],
-        * [0,0,1]]
-Output: 2
-*
-    * */
+     *
+     * = [[1,1,0],
+     * [1,1,0],
+     * [0,0,1]]
+     * Output: 2
+     *
+     */
     public static int numIslands(char[][] grid) {
-    int ans = 0;
-    int nr  = grid.length;
-    int nc = grid[0].length;
+        int ans = 0;
+        int nr = grid.length;
+        int nc = grid[0].length;
 
-    for(int r = 0; r<nr; r++ ){
-        for(int c = 0; c<nc; c++){
-            if(grid[r][c] == '1')
-                ans++;
-            dfs(grid,r,c);
+        for (int r = 0; r < nr; r++) {
+            for (int c = 0; c < nc; c++) {
+                if (grid[r][c] == '1')
+                    ans++;
+                dfs(grid, r, c);
+            }
         }
-    }
         return ans;
     }
 
-    public static void dfs(char[][] grid,int r, int c){
+    public static void dfs(char[][] grid, int r, int c) {
         int nr = grid.length;
         int nc = grid[0].length;
 
@@ -1100,34 +1098,35 @@ Output: 2
         }
 
         grid[r][c] = '0';
-        dfs(grid,r-1,c);
-        dfs(grid,r+1,c);
-        dfs(grid,r,c-1);
-        dfs(grid,r,c+1);
+        dfs(grid, r - 1, c);
+        dfs(grid, r + 1, c);
+        dfs(grid, r, c - 1);
+        dfs(grid, r, c + 1);
     }
 
-
-    public static void dfsII(int[][] isConnected,int[] visited, int node){
+    public static void dfsII(int[][] isConnected, int[] visited, int node) {
         int nr = isConnected.length;
-        for(int i = 0; i<nr; i++){
-         if(isConnected[node][i] == 1 && visited[i] == 0){
-             visited[i] = 1;
-             dfsII(isConnected,visited,i);
-         }
+        for (int i = 0; i < nr; i++) {
+            if (isConnected[node][i] == 1 && visited[i] == 0) {
+                visited[i] = 1;
+                dfsII(isConnected, visited, i);
+            }
         }
     }
+
     public int findCircleNum(int[][] isConnected) {
         int[] visited = new int[isConnected.length];
         int ans = 0;
 
-        for(int i =  0; i< isConnected.length; i++) {
-            if(visited[i] == 0){
-                dfsII(isConnected,visited,i);
+        for (int i = 0; i < isConnected.length; i++) {
+            if (visited[i] == 0) {
+                dfsII(isConnected, visited, i);
                 ans++;
+            }
         }
-    }
         return ans;
     }
+
     // Definition for a Node.
     class Node {
         public int val;
@@ -1135,7 +1134,8 @@ Output: 2
         public Node right;
         public Node next;
 
-        public Node() {}
+        public Node() {
+        }
 
         public Node(int _val) {
             val = _val;
@@ -1149,61 +1149,31 @@ Output: 2
         }
     };
 
-    public Node connect(Node root){
-        if(root  == null)
+    public Node connect(Node root) {
+        if (root == null)
             return root;
 
         Queue<Node> Q = new LinkedList<Node>();
         Q.add(root);
         // there is an element at least..
-        while(Q.size() > 0){
+        while (Q.size() > 0) {
             // The size of the queue
             int size = Q.size();
-
-            for(int i=0; i<size; i++){
-                // Pop  a node from the front of the queue
+            for (int i = 0; i < size; i++) {
+                // Pop a node from the front of the queue
                 Node node = Q.poll();
-                if(i < size-1){
+                if (i < size - 1) {
                     node.next = Q.peek();
                 }
-                if(node.left != null)
+
+                if (node.left != null)
                     Q.add(node.left);
-                if(node.right != null)
+                if (node.right != null)
                     Q.add(node.right);
             }
         }
         return root;
     }
 
+    // these changes are made for verification only.
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
