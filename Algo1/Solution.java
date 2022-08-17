@@ -1175,14 +1175,21 @@ public class Solution {
         return root;
     }
 
-    public void returnRien(int a) {
-        System.out.println("otmane is the best here.");
+ 
+   public int longestPalindrome(String s) {
+        char[] converted = s.toCharArray();
+        int len = converted.length, ans = 0;
+ 
+        int[] count = new int[128];
+        for(char c: converted){
+            if(++count[c] == 2){
+                ans +=2;
+                count[c] = 0;
+            }
+        }
+        
+        return (ans == s.length()) ? ans: ans+1; 
     }
-
-    public void returnRien2(int a) {
-        System.out.println("otmane is the best here.");
-    }
-
     // these changes are made for verification only.
 
 }
