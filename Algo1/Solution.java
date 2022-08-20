@@ -1272,5 +1272,14 @@ public class Solution {
     public boolean isValidBST(TreeNode root) {
         return validate(root, null, null);
     }
-    
+
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+        if (p.val < root.val && q.val < root.val)
+            return lowestCommonAncestor(root.left, p, q);
+        if (p.val > root.val && q.val > root.val)
+            return lowestCommonAncestor(root.right, p, q);
+        return root;
+    }
+
 }
