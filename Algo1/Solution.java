@@ -1175,21 +1175,45 @@ public class Solution {
         return root;
     }
 
- 
-   public int longestPalindrome(String s) {
+    public int longestPalindrome(String s) {
         char[] converted = s.toCharArray();
         int len = converted.length, ans = 0;
- 
+
         int[] count = new int[128];
-        for(char c: converted){
-            if(++count[c] == 2){
-                ans +=2;
+        for (char c : converted) {
+            if (++count[c] == 2) {
+                ans += 2;
                 count[c] = 0;
             }
         }
-        
-        return (ans == s.length()) ? ans: ans+1; 
+
+        return (ans == s.length()) ? ans : ans + 1;
     }
     // these changes are made for verification only.
+
+    public List<Integer> preorder(Node root) {
+        LinkedList<Node> stack = new LinkedList<>(); // Last In First OUT
+
+        LinkedList<Integer> output = new LinkedList<>();
+        if (root == null) {
+            return output;
+        } // clear
+
+        stack.add(root); // the stack contains all elements of the tree
+
+        // while the stack in not empty
+        while (!stack.isEmpty()) {
+            Node node = stack.pollLast();
+            System.out.println(" last Poll " + node.val);
+            // poll the last element // [1 2 3 4 ] => poll 4
+            output.add(node.val); // add it the the output => add 4 to the output
+
+            Collections.reverse(node.children); // reverse node.children =>
+            for (Node item : node.children) {
+                stack.add(item);
+            }
+        }
+        return output;
+    }
 
 }
