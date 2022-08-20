@@ -1282,4 +1282,19 @@ public class Solution {
         return root;
     }
 
+    public int[] twoSum2(int[] nums, int target) {
+        Map<Integer, Integer> inter = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int current = nums[i];
+            int x = target - current;
+
+            if (inter.containsKey(x)) {
+                return new int[] { inter.get(x), i };
+            }
+            inter.put(current, i);
+        }
+        return null;
+    }
+
 }
