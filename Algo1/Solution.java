@@ -1548,5 +1548,38 @@ public class Solution {
 
         return !stoneList.isEmpty() ? stoneList.remove(0) : 0;
     }
-    
+
+    public List<String> topKFrequent(String[] words, int k) {
+        Map<String, Integer> map = new HashMap<>();
+
+        for (String word : words) {
+            map.put(word, map.getOrDefault(word, 0) + 1);
+        }
+
+        PriorityQueue<String> pq = new PriorityQueue<>(new Comparator<String>() {
+            @Override
+            public int compare(String w1, String w2) {
+                int Frequency1 = map.get(w1);
+                int Frequency2 = map.get(w2);
+                if (Frequency1 == Frequency2)
+                    return w2.compareTo(w1);
+                return Frequency1 - Frequency2;
+            }
+        });
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            pq.add(entry.getKey());
+            if (pq.size() > k)
+                pq.poll();
+        }
+
+        List<String> ans = new ArrayList<>();
+        while (!pq.isEmpty())
+            ans.add(pq.poll());
+
+        Collection.reverse(ans);
+
+        return ans;
+    }
+
 }
