@@ -1373,4 +1373,35 @@ public class Solution {
         dfs_fill(grid, r, c + 1, currentColor, color);
     }
 
+    public int climbStairs(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        int[] dp = new int[n + 1];
+        dp[1] = 1; // reach 1 only one way step of 1
+        dp[2] = 2; // reach 2 by two way 1+1 or 2
+
+        for (int i = 3; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[n];
+    }
+
+     public int minCostClimbingStairs(int[] cost) {
+        // The array's length should be 1 longer than the length of cost
+        // This is because we can treat the "top floor" as a step to reach
+        int minimumCost[] = new int[cost.length + 1];
+        
+        // Start iteration from step 2, since the minimum cost of reaching
+        // step 0 and step 1 is 0
+        for (int i = 2; i < minimumCost.length; i++) {
+            int takeOneStep = minimumCost[i - 1] + cost[i - 1];
+            int takeTwoSteps = minimumCost[i - 2] + cost[i - 2];
+            minimumCost[i] = Math.min(takeOneStep, takeTwoSteps);
+        }
+        
+        // The final element in minimumCost refers to the top floor
+        return minimumCost[minimumCost.length - 1];
+    }
+    
 }
