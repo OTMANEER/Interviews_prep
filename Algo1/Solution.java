@@ -1577,7 +1577,7 @@ public class Solution {
         while (!pq.isEmpty())
             ans.add(pq.poll());
 
-        Collection.reverse(ans);
+        Collections.reverse(ans);
 
         return ans;
     }
