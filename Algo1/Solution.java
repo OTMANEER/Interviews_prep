@@ -1191,96 +1191,97 @@ public class Solution {
     }
     // these changes are made for verification only.
 
-    public List<Integer> preorder(Node root) {
-        LinkedList<Node> stack = new LinkedList<>(); // Last In First OUT
+    // public List<Integer> preorder(Node root) {
+    // LinkedList<Node> stack = new LinkedList<>(); // Last In First OUT
 
-        LinkedList<Integer> output = new LinkedList<>();
-        if (root == null) {
-            return output;
-        } // clear
+    // LinkedList<Integer> output = new LinkedList<>();
+    // if (root == null) {
+    // return output;
+    // } // clear
 
-        stack.add(root); // the stack contains all elements of the tree
+    // stack.add(root); // the stack contains all elements of the tree
 
-        // while the stack in not empty
-        while (!stack.isEmpty()) {
-            Node node = stack.pollLast();
-            System.out.println(" last Poll " + node.val);
-            // poll the last element // [1 2 3 4 ] => poll 4
-            output.add(node.val); // add it the the output => add 4 to the output
+    // // while the stack in not empty
+    // while (!stack.isEmpty()) {
+    // Node node = stack.pollLast();
+    // System.out.println(" last Poll " + node.val);
+    // // poll the last element // [1 2 3 4 ] => poll 4
+    // output.add(node.val); // add it the the output => add 4 to the output
 
-            Collections.reverse(node.children); // reverse node.children =>
-            for (Node item : node.children) {
-                stack.add(item);
-            }
-        }
-        return output;
-    }
+    // Collections.reverse(node.children); // reverse node.children =>
+    // for (Node item : node.children) {
+    // stack.add(item);
+    // }
+    // }
+    // return output;
+    // }
 
-    List<List<Integer>> levels = new ArrayList<List<Integer>>();
+    // List<List<Integer>> levels = new ArrayList<List<Integer>>();
 
-    public void helper(TreeNode node, int level) {
-        // start the current level
-        if (levels.size() == level)
-            levels.add(new ArrayList<Integer>());
+    // public void helper(TreeNode node, int level) {
+    // // start the current level
+    // if (levels.size() == level)
+    // levels.add(new ArrayList<Integer>());
 
-        // fulfil the current level
-        levels.get(level).add(node.val);
+    // // fulfil the current level
+    // levels.get(level).add(node.val);
 
-        // process child nodes for the next level
-        if (node.left != null)
-            helper(node.left, level + 1);
-        if (node.right != null)
-            helper(node.right, level + 1);
-    }
+    // // process child nodes for the next level
+    // if (node.left != null)
+    // helper(node.left, level + 1);
+    // if (node.right != null)
+    // helper(node.right, level + 1);
+    // }
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        if (root == null)
-            return levels;
-        helper(root, 0);
-        return levels;
-    }
+    // public List<List<Integer>> levelOrder(TreeNode root) {
+    // if (root == null)
+    // return levels;
+    // helper(root, 0);
+    // return levels;
+    // }
 
-    public int firstBadVersion(int n) {
+    // public int firstBadVersion(int n) {
 
-        int left = 1;
-        int right = n;
+    // int left = 1;
+    // int right = n;
 
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            if (isBadVersion(mid)) {
-                right = mid;
-            } else {
-                left = mid + 1;
-            }
-        }
-        return left;
-    }
+    // while (left < right) {
+    // int mid = left + (right - left) / 2;
+    // if (isBadVersion(mid)) {
+    // right = mid;
+    // } else {
+    // left = mid + 1;
+    // }
+    // }
+    // return left;
+    // }
 
-    public boolean validate(TreeNode root, Integer low, Integer high) {
-        // Empty trees are valid BSTs.
-        if (root == null) {
-            return true;
-        }
-        // The current node's value must be between low and high.
-        if ((low != null && root.val <= low) || (high != null && root.val >= high)) {
-            return false;
-        }
-        // The left and right subtree must also be valid.
-        return validate(root.right, root.val, high) && validate(root.left, low, root.val);
-    }
+    // public boolean validate(TreeNode root, Integer low, Integer high) {
+    // // Empty trees are valid BSTs.
+    // if (root == null) {
+    // return true;
+    // }
+    // // The current node's value must be between low and high.
+    // if ((low != null && root.val <= low) || (high != null && root.val >= high)) {
+    // return false;
+    // }
+    // // The left and right subtree must also be valid.
+    // return validate(root.right, root.val, high) && validate(root.left, low,
+    // root.val);
+    // }
 
-    public boolean isValidBST(TreeNode root) {
-        return validate(root, null, null);
-    }
+    // public boolean isValidBST(TreeNode root) {
+    // return validate(root, null, null);
+    // }
 
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    // public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
-        if (p.val < root.val && q.val < root.val)
-            return lowestCommonAncestor(root.left, p, q);
-        if (p.val > root.val && q.val > root.val)
-            return lowestCommonAncestor(root.right, p, q);
-        return root;
-    }
+    // if (p.val < root.val && q.val < root.val)
+    // return lowestCommonAncestor(root.left, p, q);
+    // if (p.val > root.val && q.val > root.val)
+    // return lowestCommonAncestor(root.right, p, q);
+    // return root;
+    // }
 
     public int[] twoSum2(int[] nums, int target) {
         Map<Integer, Integer> inter = new HashMap<>();
@@ -1342,6 +1343,34 @@ public class Solution {
             }
         }
         return ans;
+    }
+
+    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+        int nr = image.length;
+        int nc = image[0].length;
+
+        if (sr > nr || sc > nc)
+            return image;
+
+        if (color != image[sr][sc])
+            dfs_fill(image, sr, sc, image[sr][sc], color);
+
+        return image;
+    }
+
+    public static void dfs_fill(int[][] grid, int r, int c, int currentColor, int color) {
+        int nr = grid.length;
+        int nc = grid[0].length;
+
+        if (r < 0 || c < 0 || r >= nr || c >= nc || grid[r][c] != currentColor) {
+            return;
+        }
+
+        grid[r][c] = color;
+        dfs_fill(grid, r - 1, c, currentColor, color);
+        dfs_fill(grid, r + 1, c, currentColor, color);
+        dfs_fill(grid, r, c - 1, currentColor, color);
+        dfs_fill(grid, r, c + 1, currentColor, color);
     }
 
 }
