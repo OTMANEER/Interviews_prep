@@ -3,6 +3,7 @@ package Algo1;
 import jdk.jfr.Frequency;
 
 import java.awt.geom.Line2D;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -1421,10 +1422,22 @@ public class Solution {
 
     public int characterReplacement(String s, int k) {
         int ans = 0;
-        int[] ans = new int[26];
-
-
+        int[] char_count = new int[26];
+        int N = s.length();
+        int l = 0;
+        int maxLength = 0;
+        for (int r = 0; r < N; r++) {
+            char_count[s.charAt(r) - 'A']++;
+            int currentValue = char_count[s.charAt(r) - 'A'];
+            maxLength = Math.max(maxLength, currentValue);
+            while (((r - l + 1) - maxLength) > k) {
+                char_count[s.charAt(l) - 'A']--;
+                l++;
+            }
+            ans = Math.max(ans, r - l + 1);
+        }
         return ans;
+
     }
 
 }
