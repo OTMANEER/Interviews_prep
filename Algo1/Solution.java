@@ -1572,13 +1572,10 @@ public class Solution {
             if (pq.size() > k)
                 pq.poll();
         }
-
         List<String> ans = new ArrayList<>();
         while (!pq.isEmpty())
             ans.add(pq.poll());
-
         Collections.reverse(ans);
-
         return ans;
     }
 
