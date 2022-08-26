@@ -1579,6 +1579,7 @@ public class Solution {
     }
     // define a function that will resolve foreach n the value needed
 
+    
     int totalSquaredSum(int n) {
         int total = 0;
         while (n > 0) {
