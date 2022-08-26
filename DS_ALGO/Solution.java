@@ -1,11 +1,6 @@
-package Algo1;
+package DS_ALGO;
 
-import jdk.jfr.Frequency;
-
-import java.awt.geom.Line2D;
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -15,7 +10,6 @@ public class Solution {
      * public static int search(int[] nums, int target) {
      * int right = nums.length-1;
      * int left = 0;
-     * 
      * int index = 0;
      * while(left<=right){
      * int mid = left + (right-left)/2;
@@ -26,7 +20,6 @@ public class Solution {
      * if(nums[mid] > target)
      * right = mid-1;
      * }
-     * 
      * return -1;
      * }
      */
@@ -681,12 +674,9 @@ public class Solution {
     // ay line ( i,0) and (i,height[i]);
     // The maximum value the container can store at this part is not allowed to
     // become the most preferable at this point.
-
     // The first part of this question is not very important and the answer should
     // be something similar to this;
-
     // Find all the possible values
-
     // return the maximum value.
 
     public int largestPerimeter(int[] nums) {
@@ -1545,7 +1535,6 @@ public class Solution {
                 stoneList.add(stone1 - stone2);
             }
         }
-
         return !stoneList.isEmpty() ? stoneList.remove(0) : 0;
     }
 
@@ -1579,8 +1568,9 @@ public class Solution {
         return ans;
     }
 
+    public boolean isHappy(int n) {
+        
+        return false;
+    }
 
-
-
-    
 }
