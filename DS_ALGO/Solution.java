@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import javax.swing.ToolTipManager;
+
 public class Solution {
 
     /*
@@ -1569,8 +1571,21 @@ public class Solution {
     }
 
     public boolean isHappy(int n) {
-        
-        return false;
-    }
+        while (n != 1 && n != 4) {
+            n = totalSquaredSum(n);
+        }
 
+        return n == 1;
+    }
+    // define a function that will resolve foreach n the value needed
+
+    int totalSquaredSum(int n) {
+        int total = 0;
+        while (n > 0) {
+            int d = n % 10;
+            n = n / 10;
+            total += d * d;
+        }
+        return total;
+    }
 }
