@@ -1588,4 +1588,23 @@ public class Solution {
         }
         return total;
     }
+
+    public List<Integer> spiralOrder(int[][] matrix) {
+        List<Integer> ans = new ArrayList<>();
+
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+        int up = 0;
+        int left = 0;
+        int right = columns - 1;
+        int down = rows - 1;
+
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = i; j < matrix[0].length; j++) {
+
+            }
+
+        return ans;
+    }
+
 }
