@@ -1631,4 +1631,32 @@ public class Solution {
         return ans;
     }
 
+    public List<Integer> spiralOrder2(int[][] matrix) {
+        List<Integer> ans = new ArrayList<>();
+        int columns = matrix[0].length;
+        int rows = matrix.length;
+        int left = 0, up = 0, right = columns - 1, buttom = rows - 1;
+
+        while (ans.size() < columns * rows) {
+
+            for (int col = left; col <= right; col++) {
+                ans.add(matrix[up][col]);
+            }
+
+            for (int row = up; row <= buttom; row++) {
+                ans.add(matrix[row][right]);
+            }
+
+            if (up != buttom)
+                for (int col = right - 1; col >= left; col--)
+                    ans.add(matrix[buttom][col]);
+
+            if (left != right)
+                for (int row = buttom + 1; row > up; row--)
+                    ans.add(matrix[row][left]);
+        }
+
+        return ans;
+    }
+
 }
