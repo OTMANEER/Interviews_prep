@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import javax.swing.ToolTipManager;
+import javax.xml.transform.Result;
 
 public class Solution {
 
@@ -1528,6 +1529,7 @@ public class Solution {
         List<Integer> stoneList = new ArrayList<>();
         for (int weight : stones) {
             stoneList.add(weight);
+
         }
 
         while (stoneList.size() > 1) {
@@ -1599,11 +1601,33 @@ public class Solution {
         int right = columns - 1;
         int down = rows - 1;
 
-        for (int i = 0; i < matrix.length; i++)
-            for (int j = i; j < matrix[0].length; j++) {
-
+        while (ans.size() < rows * columns) {
+            // Traverse from left to right.
+            for (int col = left; col <= right; col++) {
+                ans.add(matrix[col][right]);
+            }
+            // Traverse downwards
+            for (int row = up + 1; row <= down; row++) {
+                ans.add(matrix[row][right]);
             }
 
+            if (up != down) {
+                // traverse from right to left
+                for (int col = right - 1; col >= left; col--)
+                    ans.add(matrix[down][col]);
+            }
+            if (left != right) {
+                // Traverse upwards.
+                for (int row = down - 1; row > up; row--) {
+                    ans.add(matrix[row][left]);
+                }
+            }
+
+            left++;
+            right--;
+            up++;
+            down--;
+        }
         return ans;
     }
 
