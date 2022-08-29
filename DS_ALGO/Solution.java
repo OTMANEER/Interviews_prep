@@ -1671,8 +1671,11 @@ public class Solution {
                     return "";
             }
         }
-
         return prefix;
+    }
+
+    public String multiply(String num1, String num2) {
+
     }
 
 }
