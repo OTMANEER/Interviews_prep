@@ -1675,7 +1675,7 @@ public class Solution {
     }
 
     public String multiply(String num1, String num2) {
-
+        String ans = new String("");
         return "";
     }
 
