@@ -1576,7 +1576,6 @@ public class Solution {
         while (n != 1 && n != 4) {
             n = totalSquaredSum(n);
         }
-
         return n == 1;
     }
 
