@@ -1677,6 +1677,7 @@ public class Solution {
             result += inter;
             inter = 0;
         }
+
         return String.valueOf(result);
     }
 
