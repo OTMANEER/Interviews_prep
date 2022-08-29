@@ -1677,12 +1677,7 @@ public class Solution {
     public String multiply(String num1, String num2) {
         String ans = new String("");
 
-        
-
         return "";
     }
-
-    // for the last element of these elements it doesn't show a lot of option at all.
-
 
 }
