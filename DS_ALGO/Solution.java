@@ -1659,4 +1659,10 @@ public class Solution {
         return ans;
     }
 
+    public int[] findBall(int[][] grid) {
+        int[] ans;
+
+        return ans;
+    }
+
 }
