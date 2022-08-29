@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import javax.swing.ToolTipManager;
+import javax.swing.plaf.multi.MultiButtonUI;
 import javax.xml.transform.Result;
 
 public class Solution {
@@ -371,14 +372,6 @@ public class Solution {
         System.out.println(l2);
 
         return (l1.toString()).equals(l2.toString());
-    }
-
-    public static void main(String[] args) {
-
-        String s = "ab#c";
-        String t = "ad#c";
-
-        System.out.println(backspaceCompare(s, t));
     }
 
     public class ListNode {
@@ -1673,7 +1666,7 @@ public class Solution {
         return prefix;
     }
 
-    public String multiply(String num1, String num2) {
+    public static String multiply(String num1, String num2) {
         int n1 = Integer.parseInt(num1);
         char[] c2 = num2.toCharArray();
         int result = 0;
@@ -1685,7 +1678,14 @@ public class Solution {
             inter = 0;
         }
         return String.valueOf(result);
+    }
 
+    public static void main(String[] args) {
+
+        String s = "123";
+        String t = "456";
+
+        System.out.println(multiply(s, t));
     }
 
 }
