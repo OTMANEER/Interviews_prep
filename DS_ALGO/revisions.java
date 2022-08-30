@@ -40,3 +40,15 @@ minHeap.poll();
 
 // Delete top element from the Max Heap
 maxheap.poll();
+
+
+// Length of the Min Heap
+minHeap.size();
+
+// Length of the Max Heap
+maxHeap.size();
+
+// Note, in Java, apart from checking if the length of the Heap is 0, we can also use isEmpty()
+// If there are no elements in the Heap, isEmpty() will return true;
+// If there are still elements in the Heap, isEmpty() will return false;
+
