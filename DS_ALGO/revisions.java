@@ -13,3 +13,15 @@ PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder())
 // This process is named "Heapify".
 // The Heap is a Min Heap
 PriorityQueue<Integer> heapWithValues= new PriorityQueue<>(Arrays.asList(3, 1, 2));
+
+// Insertion in Heaps
+
+// time Complexity is O(log(n))
+
+// Space Complexity O(1)
+
+// Insert an element to the Min Heap
+minHeap.add(5);
+
+// Insert an element to the Max Heap
+maxHeap.add(5);
