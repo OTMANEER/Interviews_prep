@@ -32,3 +32,11 @@ maxHeap.add(5);
 // space and time remain the same  O(1)
 
 heap.peek();
+
+// Delete the top element in O(log(n))
+
+// Delete top element from the Min Heap
+minHeap.poll();
+
+// Delete top element from the Max Heap
+maxheap.poll();
