@@ -25,3 +25,10 @@ minHeap.add(5);
 
 // Insert an element to the Max Heap
 maxHeap.add(5);
+
+
+// get the Top element 
+
+// space and time remain the same  O(1)
+
+heap.peek();
