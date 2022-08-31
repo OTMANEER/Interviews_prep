@@ -88,6 +88,6 @@ public class App {
         
         // The result is false
         System.out.println("isEmpty: " + isEmpty);
-
+        // This process was lanched using github process for the first time.
     }
 }
