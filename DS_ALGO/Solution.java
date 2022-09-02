@@ -1682,11 +1682,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-
         String s = "123";
-        String t = "456"; 
-        
+        String t = "456";
         System.out.println(multiply(s, t));
     }
-    
+
 }
