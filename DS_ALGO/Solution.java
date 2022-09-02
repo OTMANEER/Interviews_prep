@@ -1682,6 +1682,8 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        // main of tests
+
         String s = "123";
         String t = "456";
         System.out.println(multiply(s, t));
