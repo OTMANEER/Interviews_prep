@@ -1688,6 +1688,5 @@ public class Solution {
         String t = "456";
         System.out.println(multiply(s, t));
     } 
-
-    // for the lst element it doesnt' show a mlt o
+ 
 }
