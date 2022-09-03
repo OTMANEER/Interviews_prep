@@ -1558,11 +1558,13 @@ public class Solution {
             if (pq.size() > k)
                 pq.poll();
         }
+
         List<String> ans = new ArrayList<>();
         while (!pq.isEmpty())
             ans.add(pq.poll());
         Collections.reverse(ans);
         return ans;
+
     }
 
     public boolean isHappy(int n) {
@@ -1685,6 +1687,7 @@ public class Solution {
         String s = "123";
         String t = "456";
         System.out.println(multiply(s, t));
-    }
+    } 
 
+    // for the lst element it doesnt' show a mlt o
 }
