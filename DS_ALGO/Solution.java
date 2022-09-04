@@ -1630,7 +1630,6 @@ public class Solution {
         int columns = matrix[0].length;
         int rows = matrix.length;
         int left = 0, up = 0, right = columns - 1, buttom = rows - 1;
-
         while (ans.size() < columns * rows) {
 
             for (int col = left; col <= right; col++) {
@@ -1679,7 +1678,6 @@ public class Solution {
             result += inter;
             inter = 0;
         }
-
         return String.valueOf(result);
     }
 
