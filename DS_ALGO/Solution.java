@@ -1685,6 +1685,6 @@ public class Solution {
         String s = "123";
         String t = "456";
         System.out.println(multiply(s, t));
-    }
+    } 
 
 }
