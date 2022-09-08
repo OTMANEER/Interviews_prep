@@ -590,7 +590,6 @@ public class Solution {
          * return false;
          */
         Collections.sort(tempL);
-
         for (List<Integer> l : list) {
             Collections.sort(l);
             return l.equals(tempL);
@@ -610,7 +609,6 @@ public class Solution {
         int m = B.length;
         if (n == 0 || m == 0)
             return new int[0][0];
-
         List<int[]> res = new ArrayList<>();
         int i = 0;
         int j = 0;
@@ -619,7 +617,6 @@ public class Solution {
         while (i < n && j < m) {
             aHead = A[i];
             bHead = B[j];
-
             int[] intersect = { Math.max(aHead[0], bHead[0]), Math.min(aHead[1], bHead[1]) };
             if (intersect[0] <= intersect[1]) {
                 // add intersect
@@ -727,7 +724,6 @@ public class Solution {
      * }
      * 
      * }
-     * 
      * return ans;
      * }
      */
@@ -762,13 +758,10 @@ public class Solution {
      * call isBadVersion(5) -> true
      * call isBadVersion(4) -> true
      * Then 4 is the first bad version.
-     *//*
-        * 
-        * 
+     *//* 
         * int left = 1;
         * int right = n;
-        * 
-        * 
+        *  
         * while(left <= right)
         * {
         * int mid = left + (right-left)/2;
@@ -1681,6 +1674,10 @@ public class Solution {
         return String.valueOf(result);
     }
 
+    public PriorityQueue<Integer> implementPriorityQueue(int a) {
+        return new PriorityQueue<>();
+    }
+
     public static void main(String[] args) {
         String s = "123";
         String t = "456";
@@ -1688,8 +1685,7 @@ public class Solution {
     }
 
     // search for the rest of these elements.
-
     // don't repeat the rest of elements.
-
     // I am not able to share this elements.
+
 }
