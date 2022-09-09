@@ -1673,10 +1673,6 @@ public class Solution {
         return String.valueOf(result);
     }
 
-    public PriorityQueue<Integer> implementPriorityQueue(int a) {
-        return new PriorityQueue<>();
-    }
-
     public static void main(String[] args) {
         String s = "123";
         String t = "456";
