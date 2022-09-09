@@ -758,10 +758,10 @@ public class Solution {
      * call isBadVersion(5) -> true
      * call isBadVersion(4) -> true
      * Then 4 is the first bad version.
-     *//* 
+     *//*
         * int left = 1;
         * int right = n;
-        *  
+        * 
         * while(left <= right)
         * {
         * int mid = left + (right-left)/2;
@@ -947,7 +947,6 @@ public class Solution {
 
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
-
         for (int i = 0; i < nums.length; i++) {
             int current = nums[i];
             int x = target - current;
