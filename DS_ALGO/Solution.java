@@ -1679,13 +1679,4 @@ public class Solution {
         System.out.println(multiply(s, t));
     }
 
-    // search for the rest of these elements.
-    // don't repeat the rest of elements.
-    // I am not able to share this elements.
-    // for the rest of elements and it doesn't really show too much option for
-    // someone who has just started to work for this today.
-    // for the last element and it doesn't show a lot of items for the first time.
-
-    // for the rest of elements it doesn't really affect your feelings for the first
-    // time if everything is alright.
 }
