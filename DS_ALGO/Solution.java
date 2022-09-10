@@ -1682,5 +1682,8 @@ public class Solution {
     // search for the rest of these elements.
     // don't repeat the rest of elements.
     // I am not able to share this elements.
+    // for the rest of elements and it doesn't really show too much option for
+    // someone who has just started to work for this today.
+    // for the last element and it doesn't show a lot of items for the first time.
 
 }
