@@ -1686,4 +1686,6 @@ public class Solution {
     // someone who has just started to work for this today.
     // for the last element and it doesn't show a lot of items for the first time.
 
+    // for the rest of elements it doesn't really affect your feelings for the first
+    // time if everything is alright.
 }
