@@ -1679,4 +1679,8 @@ public class Solution {
         System.out.println(multiply(s, t));
     }
 
+    public static Integer MaiForTheMain(int a) {
+        return a;
+    }
+
 }
