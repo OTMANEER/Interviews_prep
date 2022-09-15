@@ -32,10 +32,10 @@ public class Solution {
      * public boolean isBadVersion(int n){
      * return true; // Predefined function that find( AN API)
      * };
-     * 
+     *
      * public int firstBadVersion(int n) {
      * int left = 1,right = n;
-     * 
+     *
      * while(left <= right){
      * System.out.println("right: "+right+" Left: "+left);
      * int index = left + (right-left)/2;
@@ -57,7 +57,7 @@ public class Solution {
      * boolean flag = false;
      * while (left <= right){
      * int mid = left + (right-left)/2;
-     * 
+     *
      * if(nums[mid] == target) {
      * flag = true;
      * return mid;
@@ -89,26 +89,26 @@ public class Solution {
      * while(left <= right){
      * int mid = left + (right-left)/2; // Locate the mid of this array before the
      * last iteration
-     * 
+     *
      * if(nums[mid] == target){
-     * 
+     *
      * leftInterval = mid;
      * rightInterval = mid;
      * int mid1 = mid;
      * int mid2 = mid;
-     * 
+     *
      * while (mid1 >=0 && nums[mid1] == target) {
      * leftInterval = mid1;
      * mid1--;
      * }
-     * 
+     *
      * while(mid2 < len && nums[mid2] == target ) {
      * rightInterval = mid2;
      * mid2++;
      * }
      * returnArray[0] = leftInterval;
      * returnArray[1] = rightInterval;
-     * 
+     *
      * return returnArray;
      * // System.out.println("left: "+left+" right: "+right);
      * }
@@ -120,18 +120,18 @@ public class Solution {
      * }
      * return returnArray;
      * }
-     * 
+     *
      * public static boolean containsDuplicate(int[] nums) {
-     * 
+     *
      * List input = Arrays.asList(nums);
      * Set in = new HashSet();
-     * 
+     *
      * for(int i:nums)
      * if(!in.add(i))
      * return true;
      *//*
         * BRUTEFORCE
-        * 
+        *
         * for(int i =0;i<nums.length;i++)
         * {
         * for(int j = 0;j< nums.length;j++) {
@@ -198,14 +198,14 @@ public class Solution {
     /*
      * Second method
      * public int findMin(int[] nums) {
-     * 
+     *
      * int i=0;
      * int j = nums.length-1;
-     * 
+     *
      * while(i<=j)
      * {
      * int mid = i+(j-i)/2;
-     * 
+     *
      * if(nums[mid]<nums[j])
      * {
      * j = mid;
@@ -217,17 +217,17 @@ public class Solution {
      * else
      * j--;
      * }
-     * 
+     *
      * return nums[i];
      * }
-     * 
+     *
      * public static int tribonacci(int n) {
-     * 
+     *
      * int[] arr = new int[n+1];
      * arr[0] = 0;
      * arr[1] = 1;
      * arr[2] = 1;
-     * 
+     *
      * int result = 0;
      * for(int i = 3;i<=n;i++){
      * if(arr[i] != 0) {
@@ -239,7 +239,7 @@ public class Solution {
      * }
      * return result;
      * }
-     * 
+     *
      */
 
     public static boolean searchMatrix(int[][] matrix, int target) {
@@ -345,7 +345,6 @@ public class Solution {
     public static boolean backspaceCompare(String s, String t) {
         int len = s.length();
         List l1 = new LinkedList<Character>();
-
         for (int i = len - 1; i >= 0; i--) {
             if (s.charAt(i) != '#')
                 l1.add(s.charAt(i));
@@ -444,20 +443,20 @@ public class Solution {
 
     /*
      * public static String removeBackSpaces(String s){
-     * 
+     *
      */
     /*
      * char[] res = s.toCharArray();
-     * 
+     *
      * if(res[0] == '#')
      * char[] resuresult = Arrays.copyOfRange(res,1,res.length);
-     * 
+     *
      * for(int i = 0; i < s.length();i++){
      * System.out.println(result[i]);
      * }
      *//*
-        * 
-        * 
+        *
+        *
         * return res.toString();
         * }
         */
@@ -573,9 +572,9 @@ public class Solution {
     public static boolean checkExistence(List<Integer> tempL, List<List<Integer>> list) {
         /*
          * int counter = 0;
-         * 
+         *
          * for(List<Integer> l: list){
-         * 
+         *
          * for(int i:l){
          * if(i== tempL.get(0) ||i== tempL.get(1) || i== tempL.get(2)){
          * counter++;
@@ -691,19 +690,19 @@ public class Solution {
      * for (i = 0; i < len; i++) {
      * sum += nums[i];
      * ans++;
-     * 
+     *
      * if (sum >= target) {
      * k = i;
      * break;
      * }
      * }
-     * 
+     *
      * if (sum < target && i == len)
      * return 0;
-     * 
+     *
      * if (k == len && sum == target)
      * return ans;
-     * 
+     *
      * int tempS = sum;
      * int tempK = k;
      * for (int j = k; j < len; j++) {
@@ -712,7 +711,7 @@ public class Solution {
      * ans--;
      * } else {
      * tempS += nums[j];
-     * 
+     *
      * if (tempS >= target)
      * for (int t = k; t < j; t++) {
      * tempS -= nums[t - k];
@@ -722,7 +721,7 @@ public class Solution {
      * tempS += nums[t - k];
      * }
      * }
-     * 
+     *
      * }
      * return ans;
      * }
@@ -761,7 +760,7 @@ public class Solution {
      *//*
         * int left = 1;
         * int right = n;
-        * 
+        *
         * while(left <= right)
         * {
         * int mid = left + (right-left)/2;
@@ -802,7 +801,7 @@ public class Solution {
     }
 
     /*
-     * 
+     *
      * string = " otmane erragragui";
      *
      *
@@ -812,11 +811,11 @@ public class Solution {
      * if(p.equals(".*")){
      * return true;
      * }
-     * 
+     *
      * String[] strings0 = p.split();
-     * 
+     *
      * String[] strings = = s.split(p)
-     * 
+     *
      * return false;
      * }
      */
@@ -833,7 +832,7 @@ public class Solution {
      * backward to iterate over the negative numbers.
      * At any step, we check which pointer gives a smaller square. We add the
      * smaller square to the output array and advance the corresponding pointer.
-     * 
+     *
      */
 
     public static int[] sortedSquares(int[] nums) {
@@ -880,7 +879,7 @@ public class Solution {
      * rotate 1 steps to the right: [7,1,2,3,4,5,6]
      * rotate 2 steps to the right: [6,7,1,2,3,4,5]
      * rotate 3 steps to the right: [5,6,7,1,2,3,4]
-     * 
+     *
      */
 
     public void rotate(int[] nums, int k) {
@@ -905,7 +904,7 @@ public class Solution {
      * int temp = nums[pos1];
      * nums[pos1] = nums[pos2];
      * nums[pos2] = ??? ?????????????????
-     * 
+     *
      * }
      * }
      * }
