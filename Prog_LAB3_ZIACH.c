@@ -9,7 +9,7 @@ FILE *create_file(const char *fileName)
     time_t t;
 
     srand(time(NULL));
-    int randMotDePasse = rand() % 1000000;
+    int randMotDePasse = rand() % 100000;
     FILE *monFichier = NULL;
     monFichier = fopen(fileName, "wt");
     if (monFichier)
