@@ -30,6 +30,5 @@ main(void)
         getchar();
         exit(1); // quit
     }
-
     return 0;
 }
