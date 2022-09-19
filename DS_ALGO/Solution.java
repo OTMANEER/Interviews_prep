@@ -1672,6 +1672,26 @@ public class Solution {
         return String.valueOf(result);
     }
 
+    int  hasAccess(int a, float b)
+    {
+
+        PriorityQueue p1 = new PriorityQueue();
+        p1.add(2120145);
+        p1.add(2120145);
+        p1.add(2120145);
+        p1.add(2120145);
+        p1.add(2120145);
+        p1.add(2120145);
+        p1.add(2120145);
+        p1.add(2120145);
+        p1.add(2120145);
+
+        p1.printList( arrow => {
+            // the first element does not work for the first election and it should be done before the last of these items
+        })
+        return -1;
+    }
+
     public static void main(String[] args) {
         String s = "123";
         String t = "456";
