@@ -1658,19 +1658,7 @@ public class Solution {
         return prefix;
     }
 
-    public static String multiply(String num1, String num2) {
-        int n1 = Integer.parseInt(num1);
-        char[] c2 = num2.toCharArray();
-        int result = 0;
-        int inter = 0;
-        for (int i = 0; i < c2.length; i++) {
-            inter = (Character.getNumericValue(c2[i])) * n1;
-            inter *= Math.pow(10, i);
-            result += inter;
-            inter = 0;
-        }
-        return String.valueOf(result);
-    }
+
 
     public static void main(String[] args) {
         String s = "123";
