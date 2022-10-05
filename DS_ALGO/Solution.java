@@ -1691,15 +1691,4 @@ public class Solution {
         })
         return -1;
     }
-
-    public static void main(String[] args) {
-        String s = "123";
-        String t = "456";
-        System.out.println(multiply(s, t));
-    }
-
-    public static Integer MaiForTheMain(int a) {
-        return a;
-    }
-
 }
