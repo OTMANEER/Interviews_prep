@@ -1658,10 +1658,7 @@ public class Solution {
         return prefix;
     }
 
-
-
-    int  hasAccess(int a, float b)
-    {
+    int hasAccess(int a, float b) {
 
         PriorityQueue p1 = new PriorityQueue();
         p1.add(2120145);
@@ -1674,9 +1671,25 @@ public class Solution {
         p1.add(2120145);
         p1.add(2120145);
 
-        p1.printList( arrow => {
-            // the first element does not work for the first election and it should be done before the last of these items
-        })
         return -1;
     }
+
+    private static final Map<Character, Character> map = Map.of('(', ')', '{', '}', '[', ']');
+
+    public int removeDuplicates(int[] nums) {
+        int insertIndex = 1;
+        for (int i = 1; i < nums.length; i++) {
+            // We skip to next index if we see a duplicate element
+            if (nums[i - 1] != nums[i]) {
+                /*
+                 * Storing the unique element at insertIndex index and incrementing
+                 * the insertIndex by 1
+                 */
+                nums[insertIndex] = nums[i];
+                insertIndex++;
+            }
+        }
+        return insertIndex;
+    }
+
 }
